@@ -13,3 +13,29 @@ if(randomNumber == 1){
 }
 
 printMessage('Mój ruch to: ' + computerMove);
+
+let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+
+console.log('Gracz wpisał: ' + playerInput);
+
+let playerMove = 'nieznany ruch';
+
+if(playerInput == '1'){
+  playerMove = 'kamień';
+} else if (playerInput == '2'){
+	playerMove = 'papier';
+} else if (playerInput == '3'){
+	playerMove = 'nożyce';
+}
+
+printMessage('Twój ruch to: ' + playerMove);
+
+if((computerMove == 'kamień' && playerMove == 'papier') || ( computerMove == 'papier' && playerMove == 'nożyce') || ( computerMove == 'nożyce' && playerMove == 'kamień')){
+  printMessage('Ty wygrywasz!');
+} else if((computerMove == 'papier' && playerMove == 'kamień') || ( computerMove == 'nożyce' && playerMove == 'papier') || ( computerMove == 'kamień' && playerMove == 'nożyce')){
+  printMessage('Ja wygrywam!');
+} else if((computerMove == 'papier' && playerMove == 'papier') || ( computerMove == 'nożyce' && playerMove == 'nożyce') || ( computerMove == 'kamień' && playerMove == 'kamień')){
+  printMessage('Remis!');
+} else if( playerMove == 'nieznany ruch'){
+  printMessage('Wpisz cyfrę 1,2 lub 3!');
+}
